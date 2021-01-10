@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block style %}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    font-family: sans-serif;
+    background-image: linear-gradient(125deg, #d2b5e2, #c5ebdf);
+    text-align: center;
+}
+
+.content {
+    
+    font-size: 2rem;
+   
+} 
+
+
+{% endblock %}
+
+{% block body%}
+<section class="content">
+
+<h1>Tasks</h1>
+
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo }}</li>
+    {% endfor %}
+    </ul>
+
+<a href="/add">Create a new task</a>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block style %}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    font-family: sans-serif;
+    background-image: linear-gradient(125deg, #d2b5e2, #c5ebdf);
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+} 
+
+form-button {
+    color: #d88771;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #d2b5e2;
+    color: white;
+}
+
+
+{% endblock %}
+
+
+{% block body %}
+<form action="/add" method="post">
+<input id="task" name="task" type="text" placeholder="Add a task...">
+    <button class="item-button " id = "submit" type="submit "> 
+            <i class="fas fa-plus-square "></i>
+    </button>
+</form>
+
+{% endblock %}
